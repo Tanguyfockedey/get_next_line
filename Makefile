@@ -11,48 +11,35 @@
 # **************************************************************************** #
 
 NAME	= get_next_line.a
-FLAGS	= -Wall -Wextra -Werror -D BUFFER_SIZE=xx
+FLAGS	= -Wall -Wextra -Werror
 FILES	=	get_next_line.c \
 			get_next_line_utils.c
 			
-B_FILES	=	ft_lstnew.c \
-			ft_lstadd_front.c \
-			ft_lstsize.c \
-			ft_lstlast.c \
-			ft_lstadd_back.c \
-			ft_lstdelone.c \
-			ft_lstclear.c \
-			ft_lstiter.c \
-			ft_lstmap.c \
-
 
 OBJ		= $(FILES:.c=.o)
-
-B_OBJ	= $(B_FILES:.c=.o)
 
 %.o: %.c
 	@ cc $(FLAGS) -c $< -o $@
 
+all: $(NAME)
+
 re: fclean all
 
-all: mandatory bonus
-	@ echo create libft.a : mandatory + bonus
-
-mandatory: $(OBJ)
+$(NAME): $(OBJ)
 	@ ar -rc $(NAME) $(OBJ)
-
-bonus: $(B_OBJ)
-	@ ar -rc $(NAME) $(B_OBJ)
-
-main:
-	cc $(FLAGS) -fsanitize=address main.c libft.a -g3
-	./a.out
-	rm -f a.out
+	@ echo create mandatory
 
 clean:
 	@ rm -f $(OBJ) $(B_OBJ)
+	@ echo delete .o
 
-fclean:
-	rm -f $(NAME)
+fclean: clean
+	@ rm -f $(NAME)
+	@ echo delete libft.a
 
-.PHONY: all clean fclean re mandatory bonus main so
+main: all
+	cc main.c $(FLAGS) -D BUFFER_SIZE=42
+	./a.out
+	-rm -f a.out
+
+.PHONY: all re bonus clean fclean
