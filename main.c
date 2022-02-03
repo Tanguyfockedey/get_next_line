@@ -6,7 +6,7 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:22:42 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/02 22:07:41 by tfockede         ###   ########.fr       */
+/*   Updated: 2022/02/03 15:32:49 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 #include <stdio.h>
 #include "get_next_line.h"
 
-#define BUFFER_SIZE 42
-
 int	main(void)
 {
 	int fd;
 	char	*buf;
 
+	printf("Buffer size = %d\n", BUFFER_SIZE);
 	fd = open("myfile.txt", O_RDONLY);
-	if (fd >= 0)
+	if (fd > -1)
 	{
 		buf = get_next_line(fd);
 		printf("%s", buf);
