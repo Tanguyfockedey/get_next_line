@@ -15,7 +15,6 @@ FLAGS	= -Wall -Wextra -Werror
 FILES	=	get_next_line.c \
 			get_next_line_utils.c
 			
-
 OBJ		= $(FILES:.c=.o)
 
 %.o: %.c
@@ -37,7 +36,7 @@ fclean: clean
 	@ rm -f $(NAME)
 	@ echo delete libft.a
 
-main: all
+main: fclean all
 	cc main.c -fsanitize=address $(FLAGS) $(NAME) #-D BUFFER_SIZE=42
 	./a.out
 	-rm -f a.out
