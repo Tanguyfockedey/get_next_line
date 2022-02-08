@@ -26,7 +26,7 @@ re: fclean all
 
 $(NAME): $(OBJ)
 	@ ar -rc $(NAME) $(OBJ)
-	@ echo create mandatory
+	@ echo create all
 
 clean:
 	@ rm -f $(OBJ) $(B_OBJ)
@@ -38,7 +38,7 @@ fclean: clean
 
 main: fclean all
 	cc main.c -fsanitize=address $(FLAGS) $(NAME) #-D BUFFER_SIZE=42
-	./a.out
-	-rm -f a.out
+	@ ./a.out
+	@ -rm -f a.out
 
 .PHONY: all re bonus clean fclean
