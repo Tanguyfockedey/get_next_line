@@ -6,7 +6,7 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:08:04 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/08 17:18:37 by tfockede         ###   ########.fr       */
+/*   Updated: 2022/02/10 17:11:29 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,30 +20,17 @@
 
 char	*get_next_line(int fd)
 {
-	char		*buf;
 	char		*line;
 	static char	*bufjoin;
-	int			eol_eof;
 
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (0);
-	buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!buf)
+	if (!ft_findeol(bufjoin))
+		bufjoin = ft_readfromfd(bufjoin, fd); //malloc
+	if (!bufjoin)
 		return (0);
-	buf[BUFFER_SIZE] = '\0';
-
-	eol_eof = 1;
-	while (eol_eof >= 0)
-	{
-		eol_eof = read(fd, buf, BUFFER_SIZE);
-		bufjoin = ft_bufjoin(bufjoin, buf);
-		if (ft_strlen(buf, 1) != BUFFER_SIZE)
-			break ;
-	}
-	line = ft_getline(&bufjoin);
-	printf("eol_eof = %d\n", eol_eof);
-	
-	free(buf);
+	line = ft_getline(bufjoin); //malloc
+	bufjoin = ft_getendline(bufjoin);
 	return (line);
 }
 

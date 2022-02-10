@@ -37,8 +37,8 @@ fclean: clean
 	@ echo delete libft.a
 
 main: fclean all
-	cc main.c -fsanitize=address $(FLAGS) $(NAME) #-D BUFFER_SIZE=42
+	cc main.c -fsanitize=address $(FLAGS) $(NAME)
 	@ ./a.out
-	@ -rm -f a.out
+#	@ -rm -f a.out
 
 .PHONY: all re bonus clean fclean
