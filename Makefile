@@ -35,7 +35,7 @@ $(NAME): $(OBJ)
 	@ echo create all
 
 bonus: $(B_OBJ)
-	@ ar -rc $(NAME) $(OBJ)
+	@ ar -rc $(NAME) $(B_OBJ)
 	@ echo create bonus
 
 clean:
@@ -44,9 +44,9 @@ clean:
 
 fclean: clean
 	@ rm -f $(NAME)
-	@ echo delete libft.a
+	@ echo delete $(NAME)
 
-main: fclean all
+main: fclean bonus
 	cc main.c -fsanitize=address $(FLAGS) $(NAME)
 	@ ./a.out
 #	@ -rm -f a.out

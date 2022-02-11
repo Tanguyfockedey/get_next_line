@@ -78,7 +78,7 @@ char	*ft_bufjoin(char *s1, const char *s2)
 char	*ft_readfromfd(char *bufjoin, int fd)
 {
 	int eol_eof;
-	int i;
+	// int i;
 	char *buf;
 
 	buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
@@ -90,12 +90,14 @@ char	*ft_readfromfd(char *bufjoin, int fd)
 		eol_eof = read(fd, buf, BUFFER_SIZE);
 		buf[eol_eof] = '\0';
 		bufjoin = ft_bufjoin(bufjoin, buf);
-		i = -1;
-		while (++i < BUFFER_SIZE)
-		{
-			if (buf[i] == '\n' || buf[i] == '\0')
-				eol_eof = 0;
-		}
+		// i = -1;
+		// while (++i < BUFFER_SIZE)
+		// {
+		// 	if (buf[i] == '\n' || buf[i] == '\0')
+		// 		eol_eof = 0;
+		// }
+		if (ft_strlen(buf, 1) != BUFFER_SIZE && BUFFER_SIZE - 1 != '\n')
+			eol_eof = 0;
 	}
 	free(buf);
 	return (bufjoin);

@@ -6,7 +6,7 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:22:42 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/11 13:34:41 by tfockede         ###   ########.fr       */
+/*   Updated: 2022/02/11 15:01:27 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 
 int	main(void)
 {
-	int		fd;
+	int		fd[5];
+	int		i = 0;
 	char	*buf;
 	printf("\nBuffer size = %d\n", BUFFER_SIZE);
 
@@ -35,15 +36,27 @@ int	main(void)
 	// printf("strlen 0 = %ld\n", ft_strlen(s1, 0));
 	// printf("strlen 1 = %ld\n", ft_strlen(s1, 1));
 
-	fd = open("myfile.txt", O_RDONLY);
+// GNL TEST
+	fd[0] = open("myfile0.txt", O_RDONLY);
+	fd[1] = open("myfile1.txt", O_RDONLY);
+	fd[2] = open("myfile2.txt", O_RDONLY);
+	fd[3] = open("myfile3.txt", O_RDONLY);
+	fd[4] = open("myfile4.txt", O_RDONLY);
+
 	printf("Press ENTER to get next line\n");
-	while (getchar() == '\n')
+	while (getchar() == 10)
 	{
-		buf = get_next_line(fd);
-		printf("| %s", buf);
+		buf = get_next_line(fd[i]);
+		printf("fd %d | %s", i, buf);
 		free(buf);
-		// printf("test\n");
+		i++;
+		if (i == 5)
+			i = 0;
 	}
-	close(fd);
+	close(fd[0]);
+	close(fd[1]);
+	close(fd[2]);
+	close(fd[3]);
+	close(fd[4]);
 	return (0);
 }
