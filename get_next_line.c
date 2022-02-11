@@ -6,7 +6,7 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:08:04 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/11 13:56:51 by tfockede         ###   ########.fr       */
+/*   Updated: 2022/02/11 14:21:36 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 */
 
 #include "get_next_line.h"
-
-#include <stdio.h>
 
 char	*get_next_line(int fd)
 {
@@ -30,6 +28,6 @@ char	*get_next_line(int fd)
 	if (!bufjoin)
 		return (0);
 	line = ft_getline(bufjoin); //malloc
-	bufjoin = ft_getendline(bufjoin);
+	bufjoin = ft_getendline(bufjoin); //malloc free
 	return (line);
 }

@@ -16,12 +16,10 @@
 
 #include "get_next_line.h"
 
-#include <stdio.h>
-
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*bufjoin[1000];
+	static char	*bufjoin[4096];
 
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (0);
