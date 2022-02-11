@@ -6,7 +6,7 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:08:04 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/10 17:11:29 by tfockede         ###   ########.fr       */
+/*   Updated: 2022/02/11 13:56:51 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,3 @@ char	*get_next_line(int fd)
 	bufjoin = ft_getendline(bufjoin);
 	return (line);
 }
-
-/*get_next_line	
-	protect
-	copy memory into str
-	while not eol eof
-		read into buffer
-		copy buffer into str  =>if eol or eof flag
-	
-	if eol
-		keep remaining in memory
-	if eof
-		null
-		
-
-
-*/

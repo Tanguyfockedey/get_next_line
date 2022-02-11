@@ -6,7 +6,7 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:20:21 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/10 16:49:02 by tfockede         ###   ########.fr       */
+/*   Updated: 2022/02/11 14:02:39 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,5 @@ char	*ft_bufjoin(char *s1, const char *s2);
 char	*ft_readfromfd(char *bufjoin, int fd);
 char	*ft_getline(char *str);
 char	*ft_getendline(char *str);
-
-
 
 #endif

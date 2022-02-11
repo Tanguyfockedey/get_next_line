@@ -14,8 +14,14 @@ NAME	= get_next_line.a
 FLAGS	= -Wall -Wextra -Werror
 FILES	=	get_next_line.c \
 			get_next_line_utils.c
+
+B_FILES =	get_next_line_bonus.c \
+			get_next_line_utils_bonus.c
+
 			
 OBJ		= $(FILES:.c=.o)
+
+B_OBJ	= $(B_FILES:.c=.o)
 
 %.o: %.c
 	@ cc $(FLAGS) -c $< -o $@
@@ -27,6 +33,10 @@ re: fclean all
 $(NAME): $(OBJ)
 	@ ar -rc $(NAME) $(OBJ)
 	@ echo create all
+
+bonus: $(B_OBJ)
+	@ ar -rc $(NAME) $(OBJ)
+	@ echo create bonus
 
 clean:
 	@ rm -f $(OBJ) $(B_OBJ)
