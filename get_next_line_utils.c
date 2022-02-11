@@ -107,6 +107,8 @@ char	*ft_getline(char *str)
 	size_t	len;
 	size_t	i;
 
+	if (str[0] = '\0')
+		return (0);
 	len = ft_strlen(str, 1);
 	line = malloc((len + 1) * sizeof(char));
 	if (!line)
