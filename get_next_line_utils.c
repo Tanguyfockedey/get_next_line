@@ -61,8 +61,8 @@ static char	*ft_bufjoin(char *s1, const char *s2)
 
 char	*ft_readfromfd(char *bufjoin, int fd)
 {
-	int eol_eof;
-	char *buf;
+	int		eol_eof;
+	char	*buf;
 
 	buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
 	if (!buf)
@@ -74,7 +74,7 @@ char	*ft_readfromfd(char *bufjoin, int fd)
 		if (eol_eof < 0)
 		{
 			free(buf);
-			return(0);
+			return (0);
 		}
 		buf[eol_eof] = '\0';
 		bufjoin = ft_bufjoin(bufjoin, buf);
