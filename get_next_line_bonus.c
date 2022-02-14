@@ -21,7 +21,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*bufjoin[4096];
 
-	if (fd < 0 || BUFFER_SIZE < 1)
+	if (fd < 0 || fd >= 4096|| BUFFER_SIZE < 1)
 		return (0);
 	if (!ft_findeol(bufjoin[fd]))
 		bufjoin[fd] = ft_readfromfd(bufjoin[fd], fd); //malloc

@@ -17,13 +17,12 @@
 # include <stdlib.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 5
+#  define BUFFER_SIZE 42
 # endif
 
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str, int eol);
 int		ft_findeol(char *str);
-char	*ft_bufjoin(char *s1, const char *s2);
 char	*ft_readfromfd(char *bufjoin, int fd);
 char	*ft_getline(char *str);
 char	*ft_getendline(char *str);

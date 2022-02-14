@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *str, int eol)
 {
@@ -46,7 +46,7 @@ int		ft_findeol(char *str)
 	return (0);
 }
 
-char	*ft_bufjoin(char *s1, const char *s2)
+static char	*ft_bufjoin(char *s1, const char *s2)
 {
 	char	*string;
 	size_t	i;
@@ -78,7 +78,6 @@ char	*ft_bufjoin(char *s1, const char *s2)
 char	*ft_readfromfd(char *bufjoin, int fd)
 {
 	int eol_eof;
-	// int i;
 	char *buf;
 
 	buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
@@ -88,14 +87,13 @@ char	*ft_readfromfd(char *bufjoin, int fd)
 	while (eol_eof)
 	{
 		eol_eof = read(fd, buf, BUFFER_SIZE);
+		if (eol_eof < 0)
+		{
+			free(buf);
+			return(0);
+		}
 		buf[eol_eof] = '\0';
 		bufjoin = ft_bufjoin(bufjoin, buf);
-		// i = -1;
-		// while (++i < BUFFER_SIZE)
-		// {
-		// 	if (buf[i] == '\n' || buf[i] == '\0')
-		// 		eol_eof = 0;
-		// }
 		if (ft_strlen(buf, 1) != BUFFER_SIZE && BUFFER_SIZE - 1 != '\n')
 			eol_eof = 0;
 	}
