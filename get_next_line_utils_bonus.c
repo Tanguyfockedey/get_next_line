@@ -30,9 +30,9 @@ size_t	ft_strlen(const char *str, int eol)
 	return (i);
 }
 
-int		ft_findeol(char *str)
+size_t		ft_findeol(char *str)
 {
-	int i;
+	size_t i;
 
 	if (!str)
 		return (0);
