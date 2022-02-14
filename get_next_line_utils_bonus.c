@@ -87,7 +87,7 @@ char	*ft_readfromfd(char *bufjoin, int fd)
 	while (eol_eof)
 	{
 		eol_eof = read(fd, buf, BUFFER_SIZE);
-		if (eol_eof < 0)
+		if (eol_eof <= 0)
 		{
 			free(buf);
 			return(0);

@@ -6,7 +6,7 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:20:21 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/14 19:18:13 by tfockede         ###   ########.fr       */
+/*   Updated: 2022/02/14 21:36:40 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdlib.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 40
 # endif
 
 char	*get_next_line(int fd);

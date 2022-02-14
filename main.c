@@ -6,7 +6,7 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:22:42 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/14 18:00:07 by tfockede         ###   ########.fr       */
+/*   Updated: 2022/02/14 21:29:14 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,9 @@ int	main(void)
 {
 	int		fd[5];
 	int		i = 3;
+	int		j = 4;
 	char	*buf;
+	char	c = '0';
 	printf("\nBuffer size = %d\n", BUFFER_SIZE);
 
 //BUFJOIN TEST
@@ -44,10 +46,12 @@ int	main(void)
 	fd[4] = open("myfile4.txt", O_RDONLY);
 
 	printf("Press ENTER to get next line\n");
-	while (getchar() == 10)
+	while (j--) //getchar() == 10
 	{
 		buf = get_next_line(fd[i]);
-		printf("fd %d | %s", i, buf);
+		printf("fd %d | %s\n", i, buf);
+		read(fd[i], &c, 1);
+		printf("%c\n", c);
 		free(buf);
 		// i++;
 		if (i == 5)
