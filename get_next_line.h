@@ -6,7 +6,7 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:20:21 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/14 19:08:24 by tfockede         ###   ########.fr       */
+/*   Updated: 2022/02/14 19:18:13 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *str, int eol);
-int		ft_findeol(char *str);
+size_t	ft_findeol(char *str);
 char	*ft_readfromfd(char *bufjoin, int fd);
 char	*ft_getline(char *str);
 char	*ft_getendline(char *str);
