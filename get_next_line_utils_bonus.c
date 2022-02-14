@@ -87,14 +87,14 @@ char	*ft_readfromfd(char *bufjoin, int fd)
 	while (eol_eof)
 	{
 		eol_eof = read(fd, buf, BUFFER_SIZE);
-		if (eol_eof <= 0)
+		if (eol_eof < 0)
 		{
 			free(buf);
 			return(0);
 		}
 		buf[eol_eof] = '\0';
 		bufjoin = ft_bufjoin(bufjoin, buf);
-		if (ft_strlen(buf, 1) != BUFFER_SIZE && BUFFER_SIZE - 1 != '\n')
+		if (ft_strlen(buf, 1) != BUFFER_SIZE || buf[BUFFER_SIZE - 1] == '\n')
 			eol_eof = 0;
 	}
 	free(buf);

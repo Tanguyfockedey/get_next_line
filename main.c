@@ -6,7 +6,7 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:22:42 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/14 21:29:14 by tfockede         ###   ########.fr       */
+/*   Updated: 2022/02/14 22:00:14 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(void)
 {
 	int		fd[5];
 	int		i = 3;
-	int		j = 4;
+	int		j = 3;
 	char	*buf;
 	char	c = '0';
 	printf("\nBuffer size = %d\n", BUFFER_SIZE);
