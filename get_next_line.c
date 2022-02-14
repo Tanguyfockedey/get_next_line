@@ -6,7 +6,7 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:08:04 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/11 14:21:36 by tfockede         ###   ########.fr       */
+/*   Updated: 2022/02/14 19:25:51 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ char	*get_next_line(int fd)
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (0);
 	if (!ft_findeol(bufjoin))
-		bufjoin = ft_readfromfd(bufjoin, fd); //malloc
+		bufjoin = ft_readfromfd(bufjoin, fd);
 	if (!bufjoin)
 		return (0);
-	line = ft_getline(bufjoin); //malloc
-	bufjoin = ft_getendline(bufjoin); //malloc free
+	line = ft_getline(bufjoin);
+	bufjoin = ft_getendline(bufjoin);
 	return (line);
 }

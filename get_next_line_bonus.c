@@ -21,13 +21,13 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*bufjoin[4096];
 
-	if (fd < 0 || fd >= 4096|| BUFFER_SIZE < 1)
+	if (fd < 0 || fd >= 4096 || BUFFER_SIZE < 1)
 		return (0);
 	if (!ft_findeol(bufjoin[fd]))
-		bufjoin[fd] = ft_readfromfd(bufjoin[fd], fd); //malloc
+		bufjoin[fd] = ft_readfromfd(bufjoin[fd], fd);
 	if (!bufjoin[fd])
 		return (0);
-	line = ft_getline(bufjoin[fd]); //malloc
+	line = ft_getline(bufjoin[fd]);
 	bufjoin[fd] = ft_getendline(bufjoin[fd]);
 	return (line);
 }
