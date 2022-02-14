@@ -30,7 +30,7 @@ static size_t	ft_strlen(const char *str, int eol)
 	return (i);
 }
 
-static char		*ft_bufjoin(char *s1, const char *s2)
+static char	*ft_bufjoin(char *s1, const char *s2)
 {
 	char	*string;
 	size_t	i;
@@ -59,7 +59,7 @@ static char		*ft_bufjoin(char *s1, const char *s2)
 	return (string);
 }
 
-char			*ft_readfromfd(char *bufjoin, int fd)
+char	*ft_readfromfd(char *bufjoin, int fd)
 {
 	int eol_eof;
 	char *buf;
@@ -85,7 +85,7 @@ char			*ft_readfromfd(char *bufjoin, int fd)
 	return (bufjoin);
 }
 
-char			*ft_getline(char *str)
+char	*ft_getline(char *str)
 {
 	char	*line;
 	size_t	len;
@@ -104,7 +104,7 @@ char			*ft_getline(char *str)
 	return (line);
 }
 
-char			*ft_getendline(char *str)
+char	*ft_getendline(char *str)
 {
 	int		start;
 	int		len;

@@ -16,9 +16,9 @@
 
 #include "get_next_line_bonus.h"
 
-size_t		ft_findeol(char *str)
+size_t	ft_findeol(char *str)
 {
-	size_t i;
+	size_t	i;
 
 	if (!str)
 		return (0);

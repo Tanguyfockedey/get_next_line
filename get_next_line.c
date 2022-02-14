@@ -6,7 +6,7 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:08:04 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/14 22:24:56 by tfockede         ###   ########.fr       */
+/*   Updated: 2022/02/14 22:35:08 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 size_t	ft_findeol(char *str)
 {
-	size_t i;
+	size_t	i;
 
 	if (!str)
 		return (0);
