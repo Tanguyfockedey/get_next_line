@@ -6,13 +6,13 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:22:42 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/11 15:01:27 by tfockede         ###   ########.fr       */
+/*   Updated: 2022/02/14 13:04:26 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fcntl.h>
 #include <stdio.h>
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	main(void)
 {
