@@ -6,7 +6,7 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:22:42 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/14 13:04:26 by tfockede         ###   ########.fr       */
+/*   Updated: 2022/02/14 17:48:59 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 int	main(void)
 {
 	int		fd[5];
-	int		i = 0;
+	int		i = 3;
 	char	*buf;
 	printf("\nBuffer size = %d\n", BUFFER_SIZE);
 
@@ -49,7 +49,7 @@ int	main(void)
 		buf = get_next_line(fd[i]);
 		printf("fd %d | %s", i, buf);
 		free(buf);
-		i++;
+		// i++;
 		if (i == 5)
 			i = 0;
 	}

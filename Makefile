@@ -46,7 +46,7 @@ fclean: clean
 	@ rm -f $(NAME)
 	@ echo delete $(NAME)
 
-main: fclean bonus
+main: fclean all
 	cc main.c -fsanitize=address -g3 $(FLAGS) $(NAME)
 	@ ./a.out
 #	@ -rm -f a.out
