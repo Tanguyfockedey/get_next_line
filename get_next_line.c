@@ -6,7 +6,7 @@
 /*   By: tfockede <tfockede@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/02 17:08:04 by tfockede          #+#    #+#             */
-/*   Updated: 2022/02/14 19:25:51 by tfockede         ###   ########.fr       */
+/*   Updated: 2022/02/14 22:24:56 by tfockede         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,22 @@
 */
 
 #include "get_next_line.h"
+
+size_t	ft_findeol(char *str)
+{
+	size_t i;
+
+	if (!str)
+		return (0);
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '\n')
+			return (i + 1);
+		i++;
+	}
+	return (0);
+}
 
 char	*get_next_line(int fd)
 {

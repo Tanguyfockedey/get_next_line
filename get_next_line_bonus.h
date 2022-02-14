@@ -21,7 +21,6 @@
 # endif
 
 char	*get_next_line(int fd);
-size_t	ft_strlen(const char *str, int eol);
 size_t	ft_findeol(char *str);
 char	*ft_readfromfd(char *bufjoin, int fd);
 char	*ft_getline(char *str);

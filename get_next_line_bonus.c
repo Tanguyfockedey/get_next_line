@@ -16,6 +16,22 @@
 
 #include "get_next_line_bonus.h"
 
+size_t		ft_findeol(char *str)
+{
+	size_t i;
+
+	if (!str)
+		return (0);
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == '\n')
+			return (i + 1);
+		i++;
+	}
+	return (0);
+}
+
 char	*get_next_line(int fd)
 {
 	char		*line;
