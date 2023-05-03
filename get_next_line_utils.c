@@ -123,6 +123,6 @@ char	*ft_getendline(char *str)
 	newstr[len] = '\0';
 	while (len--)
 		newstr[len] = str[start + len];
-	free (str);
+	free(str);
 	return (newstr);
 }
